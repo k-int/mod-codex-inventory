@@ -1,0 +1,30 @@
+{
+  "id" : "cf7871d8-0faf-44a0-9d43-f47b3eaacc56",
+  "source" : "Local: MODS",
+  "title" : "Essays on C.S. Lewis and George MacDonald",
+  "alternativeTitles" : [ ],
+  "series" : [ ],
+  "identifiers" : [ {
+    "value" : "53556908",
+    "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+  }, {
+    "value" : "b13803414",
+    "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+  }, {
+    "value" : "0889464944",
+    "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+  } ],
+  "creators" : [ {
+    "name" : "Marshall, Cynthia.",
+    "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+  } ],
+  "contributors" : [ ],
+  "subjects" : [ ],
+  "classifications" : [ ],
+  "publication" : [ ],
+  "urls" : [ ],
+  "instanceTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2c",
+  "physicalDescriptions" : [ ],
+  "languages" : [ ],
+  "notes" : [ ]
+}

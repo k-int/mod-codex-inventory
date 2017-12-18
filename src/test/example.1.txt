@@ -1,0 +1,289 @@
+{
+  "instances" : [ {
+    "id" : "7fbd5d84-62d1-44c6-9c45-6cb173998bbd",
+    "source" : "Sample",
+    "title" : "Bridget Jones's Baby: the diaries",
+    "alternativeTitles" : [ ],
+    "edition" : "First American Edition",
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "ocn956625961",
+      "identifierTypeId" : "5d164f4b-0b15-4e42-ae75-cfcf85318ad9"
+    } ],
+    "creators" : [ {
+      "name" : "Fielding, Helen",
+      "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+    } ],
+    "contributors" : [ ],
+    "subjects" : [ "Jones, Bridget", "Pregnant women", "England", "Humorous fiction", "Diary fiction" ],
+    "classifications" : [ {
+      "classificationNumber" : "PR6056.I4588",
+      "classificationTypeId" : "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+    } ],
+    "publication" : [ {
+      "publisher" : "Alfred A. Knopf",
+      "place" : "New York",
+      "dateOfPublication" : "2016"
+    } ],
+    "urls" : [ ],
+    "instanceTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2c",
+    "physicalDescriptions" : [ "219 pages ; 20 cm." ],
+    "languages" : [ "eng" ],
+    "notes" : [ "Bridget Jones finds herself unexpectedly pregnant at the eleventh hour. However, her joyful pregnancy is dominated by one crucial but awkward question --who is the father? Could it be honorable, decent, notable human rights lawyer, Mark Darcy? Or, is it charming, witty, and totally despicable, Daniel Cleaver?" ]
+  }, {
+    "id" : "f31a36de-fcf8-44f9-87ef-a55d06ad21ae",
+    "source" : "Sample",
+    "title" : "The Girl on the Train",
+    "alternativeTitles" : [ "First alternative title", "Second alternative title" ],
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "B01LO7PJOE",
+      "identifierTypeId" : "7f907515-a1bf-4513-8a38-92e1a07c539d"
+    } ],
+    "creators" : [ {
+      "name" : "Creator A",
+      "creatorTypeId" : "2e48e713-17f3-7c13-09f8-23845bb210aa"
+    }, {
+      "name" : "Creator B",
+      "creatorTypeId" : "e8b311a6-3b21-03f2-2269-dd9310cb2d0a"
+    } ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "urls" : [ ],
+    "instanceTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2c",
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ]
+  }, {
+    "id" : "a89eccf0-57a6-495e-898d-32b9b2210f2f",
+    "source" : "Sample",
+    "title" : "Interesting Times",
+    "alternativeTitles" : [ ],
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "0552142352",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    }, {
+      "value" : "9780552142352",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    } ],
+    "creators" : [ {
+      "name" : "Pratchett, Terry",
+      "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+    } ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "urls" : [ ],
+    "instanceTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2c",
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ]
+  }, {
+    "id" : "6506b79b-7702-48b2-9774-a1c538fdd34e",
+    "source" : "Sample",
+    "title" : "Nod",
+    "alternativeTitles" : [ ],
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "0956687695",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    }, {
+      "value" : "9780956687695",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    } ],
+    "creators" : [ {
+      "name" : "Barnes, Adrian",
+      "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+    } ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "urls" : [ ],
+    "instanceTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2c",
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ]
+  }, {
+    "id" : "cf23adf0-61ba-4887-bf82-956c4aae2260",
+    "source" : "Sample",
+    "title" : "Temeraire",
+    "alternativeTitles" : [ ],
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "1447294130",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    }, {
+      "value" : "9781447294130",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    } ],
+    "creators" : [ {
+      "name" : "Novik, Naomi",
+      "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+    } ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "urls" : [ ],
+    "instanceTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2c",
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ]
+  }, {
+    "id" : "e54b1f4d-7d05-4b1a-9368-3c36b75d8ac6",
+    "source" : "Sample",
+    "title" : "Transparent water",
+    "alternativeTitles" : [ ],
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "ocn968777846",
+      "identifierTypeId" : "5d164f4b-0b15-4e42-ae75-cfcf85318ad9"
+    }, {
+      "value" : "9786316800312",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    }, {
+      "value" : "6316800312",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    }, {
+      "value" : "OTA-1031 Otá Records",
+      "identifierTypeId" : "b5d8cdc4-9441-487c-90cf-0c7ec97728eb"
+    }, {
+      "value" : "(OCoLC)968777846",
+      "identifierTypeId" : "7e591197-f335-4afb-bc6d-a6d76ca3bace"
+    } ],
+    "creators" : [ {
+      "name" : "Sosa, Omar, composer, performer.",
+      "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+    } ],
+    "contributors" : [ {
+      "name" : "Keita, Seckou, 1977- composer, performer.",
+      "contributorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2b"
+    } ],
+    "subjects" : [ "World music.", "Jazz" ],
+    "classifications" : [ {
+      "classificationNumber" : "M1366.S67",
+      "classificationTypeId" : "ce176ace-a53e-4b4d-aa89-725ed7b2edac"
+    } ],
+    "publication" : [ {
+      "publisher" : "Otá Records, ",
+      "place" : "[Place of publication not identified]: ",
+      "dateOfPublication" : "[2017]"
+    } ],
+    "urls" : [ ],
+    "instanceTypeId" : "2e48e713-17f3-7c13-09f8-23845bb210ac",
+    "instanceFormatId" : "309c3a3d-d54c-4519-b978-2c5c2de78d95",
+    "physicalDescriptions" : [ "1 audio disc: digital; 4 3/4 in." ],
+    "languages" : [ "und" ],
+    "notes" : [ "Title from disc label.", "All compositions written by Omar Sosa and Seckou Keita, except tracks 6, 8 and 10 written by Omar Sosa.", "Produced by Steve Argüelles and Omar Sosa.", "Omar Sosa, grand piano, Fender Rhodes, sampler, microKorg, vocals ; Seckou Keita, kora, talking drum, djembe, sabar, vocals ; Wu Tong, sheng, bawu ; Mieko Miyazaki, koto ; Gustavo Ovalles, bata drums, culo'e puya, maracas, guataca, calabaza, clave ; E'Joung-Ju, geojungo ; Mosin Khan Kawa, nagadi ; Dominique Huchet, bird effects." ]
+  }, {
+    "id" : "cf902bc7-299e-49c8-8d39-2f8d0927f97c",
+    "source" : "Local: MODS",
+    "title" : "California: its gold and its inhabitants, by the author of 'Seven years on the Slave coast of Africa'.",
+    "alternativeTitles" : [ ],
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "69228882",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    } ],
+    "creators" : [ {
+      "name" : "Huntley, Henry Veel",
+      "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+    } ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "urls" : [ ],
+    "instanceTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2c",
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ]
+  }, {
+    "id" : "106ce3b4-433a-406c-b584-e5a6242258f2",
+    "source" : "Local: MODS",
+    "title" : "[Dell’Emulazione e dell’Influenza della Poesia sui Costumi, discorsi due.]",
+    "alternativeTitles" : [ ],
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "43620390",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    } ],
+    "creators" : [ {
+      "name" : "MABIL, Pier Luigi.",
+      "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+    } ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "urls" : [ ],
+    "instanceTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2c",
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ]
+  }, {
+    "id" : "9a07fbce-1bd1-47a7-8dc3-29889d20aede",
+    "source" : "Local: MODS",
+    "title" : "Pavle Nik Nikitović",
+    "alternativeTitles" : [ ],
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "37696876",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    }, {
+      "value" : "8683385124",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    } ],
+    "creators" : [ {
+      "name" : "Nikitović, Pavle",
+      "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+    }, {
+      "name" : "Božović, Ratko.",
+      "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+    } ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "urls" : [ ],
+    "instanceTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2c",
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ]
+  }, {
+    "id" : "cf7871d8-0faf-44a0-9d43-f47b3eaacc56",
+    "source" : "Local: MODS",
+    "title" : "Essays on C.S. Lewis and George MacDonald",
+    "alternativeTitles" : [ ],
+    "series" : [ ],
+    "identifiers" : [ {
+      "value" : "53556908",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    }, {
+      "value" : "b13803414",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    }, {
+      "value" : "0889464944",
+      "identifierTypeId" : "8261054f-be78-422d-bd51-4ed9f33c3422"
+    } ],
+    "creators" : [ {
+      "name" : "Marshall, Cynthia.",
+      "creatorTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2a"
+    } ],
+    "contributors" : [ ],
+    "subjects" : [ ],
+    "classifications" : [ ],
+    "publication" : [ ],
+    "urls" : [ ],
+    "instanceTypeId" : "2b94c631-fca9-a892-c730-03ee529ffe2c",
+    "physicalDescriptions" : [ ],
+    "languages" : [ ],
+    "notes" : [ ]
+  } ],
+  "totalRecords" : 116
+}
