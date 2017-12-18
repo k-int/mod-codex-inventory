@@ -1,7 +1,12 @@
 {
   "id": "${artifactId}-${version}",
   "name": "Codex wrapper for Inventory",
-  "requires": [],
+  "requires": [
+    {
+      "id": "instance-storage",
+      "version": "3.0"
+    }
+  ],
   "provides": [
     {
       "id": "codex",
