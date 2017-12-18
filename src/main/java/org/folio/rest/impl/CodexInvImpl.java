@@ -7,12 +7,11 @@ import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpClient;
 import io.vertx.core.http.HttpClientRequest;
-import io.vertx.core.json.Json;
+import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.List;
 import java.util.Map;
 import javax.ws.rs.core.Response;
 import org.folio.okapi.common.XOkapiHeaders;
@@ -23,12 +22,6 @@ import org.folio.rest.jaxrs.resource.CodexInstancesResource;
 public class CodexInvImpl implements CodexInstancesResource {
 
   private static final Logger logger = LoggerFactory.getLogger("codex.inventory");
-
-  static int init() {
-    logger.info("CodexInvImpl started");
-    return 0;
-  }
-  static int x = init();
 
   private void getUrl(String url, HttpClient client,
     LHeaders okapiHeaders, Handler<AsyncResult<Buffer>> fut) {
@@ -83,8 +76,7 @@ public class CodexInvImpl implements CodexInstancesResource {
         Buffer b = res.result();
         if (b.length() > 0) {
           try {
-            // TODO: mapping
-            // Json.decodeValue(b.toString(), InstanceCollection.class);
+            InstanceConvert.invToCollection(new JsonObject(b.toString()), col);
           } catch (Exception e) {
             fut.handle(Future.failedFuture(e));
             return;
@@ -96,7 +88,7 @@ public class CodexInvImpl implements CodexInstancesResource {
   }
 
   private void getById(String id, Context vertxContext, LHeaders okapiHeaders,
-    List<Instance> instances, Handler<AsyncResult<Void>> fut) {
+    Instance instance, Handler<AsyncResult<Void>> fut) {
 
     HttpClient client = vertxContext.owner().createHttpClient();
     final String url = okapiHeaders.get(XOkapiHeaders.URL) + "/instance-storage/instances/" + id;
@@ -106,33 +98,60 @@ public class CodexInvImpl implements CodexInstancesResource {
         logger.warn("getById. getUrl failed " + res.cause());
         fut.handle(Future.failedFuture(res.cause()));
       } else {
-        Instance instance = null;
         try {
           if (res.result().length() > 0) {
-            // TODO: mapping
-            instance = Json.decodeValue(res.result().toString(), Instance.class);
+            JsonObject j = new JsonObject(res.result().toString());
+            InstanceConvert.invToCodex(j, instance);
           }
         } catch (Exception e) {
           fut.handle(Future.failedFuture(e));
           return;
         }
-        instances.add(instance);
         fut.handle(Future.succeededFuture());
       }
     });
   }
 
   @Override
-  public void getCodexInstances(String query, int offset, int limit, String lang, Map<String, String> okapiHeaders, Handler<AsyncResult<Response>> asyncResultHandler, Context vertxContext) throws Exception {
+  public void getCodexInstances(String query, int offset, int limit, String lang,
+          Map<String, String> okapiHeaders, Handler<AsyncResult<Response>> handler,
+          Context vertxContext) throws Exception {
+
     logger.info("GetCodexInstances");
-    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    LHeaders lHeaders = new LHeaders(okapiHeaders);
+    InstanceCollection col = new InstanceCollection();
+    getByQuery(vertxContext, query, offset, limit, lHeaders, col, res -> {
+      if (res.failed()) {
+        handler.handle(Future.succeededFuture(
+                CodexInstancesResource.GetCodexInstancesResponse.withPlainInternalServerError(res.cause().getMessage())));
+      } else {
+        handler.handle(Future.succeededFuture(
+                CodexInstancesResource.GetCodexInstancesResponse.withJsonOK(col)));
+      }
+    });
   }
 
   @Override
-  public void getCodexInstancesById(String id, String lang, Map<String, String> okapiHeaders, Handler<AsyncResult<Response>> asyncResultHandler, Context vertxContext) throws Exception {
+  public void getCodexInstancesById(String id, String lang,
+          Map<String, String> okapiHeaders, Handler<AsyncResult<Response>> handler,
+          Context vertxContext) throws Exception {
+
     logger.info("GetCodexInstancesById");
-
-    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    LHeaders lHeaders = new LHeaders(okapiHeaders);
+    Instance instance = new Instance();
+    getById(id, vertxContext, lHeaders, instance, res -> {
+      if (res.failed()) {
+        handler.handle(Future.succeededFuture(
+                CodexInstancesResource.GetCodexInstancesByIdResponse.withPlainInternalServerError(res.cause().getMessage())));
+      } else {
+        if (instance.getId() == null) {
+          handler.handle(Future.succeededFuture(
+                  CodexInstancesResource.GetCodexInstancesByIdResponse.withPlainNotFound(id)));
+        } else {
+          handler.handle(Future.succeededFuture(
+                  CodexInstancesResource.GetCodexInstancesByIdResponse.withJsonOK(instance)));
+        }
+      }
+    });
   }
-
 }
