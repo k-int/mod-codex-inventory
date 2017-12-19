@@ -2,8 +2,6 @@ package org.folio.rest.impl;
 
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.core.logging.Logger;
-import io.vertx.core.logging.LoggerFactory;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,15 +17,12 @@ public class InstanceConvert {
   private InstanceConvert() {
     throw new IllegalStateException("Instance");
   }
-  private static final Logger logger = LoggerFactory.getLogger("codex.inventory");
-
   public static void invToCollection(JsonObject j, InstanceCollection col,
     Map<String, String> contributorTypeMap,
     Map<String, String> instanceTypeMap,
     Map<String, String> instanceFormatMap,
     Map<String, String> identifierTypeMap) {
 
-    logger.info("invToCollection");
     JsonArray a = j.getJsonArray("instances");
     if (a == null) {
       throw (new IllegalArgumentException("instances"));
@@ -53,7 +48,6 @@ public class InstanceConvert {
     Map<String, String> instanceFormatMap,
     Map<String, String> identifierTypeMap) {
 
-    logger.info("invToCodex");
     { // required in codex
       final String id = j.getString("id");
       if (id == null) {
@@ -126,12 +120,62 @@ public class InstanceConvert {
       if (name == null) {
         throw (new IllegalArgumentException("instanceTypeId " + id + " does not exist"));
       }
-      final String nName = name.toUpperCase().replaceAll("\\s", "");
-      try {
-        instance.setType(Type.valueOf(nName));
-      } catch (IllegalArgumentException ex) {
-        instance.setType(Type.UNSPECIFIED);
+
+      Type t = Type.UNSPECIFIED;
+      switch (name) {
+        case "Spoken Record":
+          t = Type.AUDIO;
+          break;
+        case "Books":
+          t = Type.BOOKS;
+          break;
+        case "Computer Files":
+          t = Type.DATABASES;
+          break;
+        case "eBooks":
+          t = Type.EBOOKS;
+          break;
+        case "3-D Objects":
+          t = Type.KITS;
+          break;
+        case "Kits":
+          t = Type.KITS;
+          break;
+        case "Mixed Material":
+          t = Type.KITS;
+          break;
+        case "Maps":
+          t = Type.MAPS;
+          break;
+        case "Music (Audio)":
+          t = Type.MUSIC;
+          break;
+        case "Music (MSS)":
+          t = Type.MUSIC;
+          break;
+        case "Music (Scores)":
+          t = Type.MUSIC;
+          break;
+        case "Serials":
+          t = Type.PERIODICALS;
+          break;
+        case "Charts Posters":
+          t = Type.POSTERS;
+          break;
+        case "Theses":
+          t = Type.THESISANDDISSERTATION;
+          break;
+        case "Error":
+          t = Type.UNSPECIFIED;
+          break;
+        case "Videorecording":
+          t = Type.VIDEO;
+          break;
+        case "Web Resources":
+          t = Type.WEBRESOURCES;
+          break;
       }
+      instance.setType(t);
     }
 
     {
