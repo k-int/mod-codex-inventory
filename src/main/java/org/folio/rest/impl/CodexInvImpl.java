@@ -31,11 +31,12 @@ public class CodexInvImpl implements CodexInstancesResource {
     HttpClientRequest req = client.getAbs(url, res -> {
       Buffer b = Buffer.buffer();
       res.handler(b::appendBuffer);
+      logger.info("getUrl " + url + " returned " + res.statusCode());
       res.endHandler(r -> {
         client.close();
         if (res.statusCode() == 200) {
           fut.handle(Future.succeededFuture(b));
-        } else if (res.statusCode() == 404) {
+        } else if (res.statusCode() == 404 || res.statusCode() == 500) {
           fut.handle(Future.succeededFuture(Buffer.buffer())); // empty buffer
         } else {
           fut.handle(Future.failedFuture("Get url " + url + " returned " + res.statusCode()));
