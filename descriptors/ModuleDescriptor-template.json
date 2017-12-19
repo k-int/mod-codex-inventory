@@ -5,6 +5,22 @@
     {
       "id": "instance-storage",
       "version": "3.0"
+    },
+    {
+      "id": "contributor-types",
+      "version": "1.0"
+    },
+    {
+      "id": "instance-types",
+      "version": "1.0"
+    },
+    {
+      "id": "instance-formats",
+      "version": "1.0"
+    },
+    {
+      "id": "identifier-types",
+      "version": "1.0"
     }
   ],
   "provides": [
