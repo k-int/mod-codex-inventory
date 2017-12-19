@@ -22,5 +22,8 @@ H3=X-Okapi-URL:$OKAPIURL
 curl "-H$H1" -H$H2 -H$H3 'http://localhost:8081/codex-instances?query=title%3Dwater'
 sleep 1
 curl "-H$H1" -H$H2 -H$H3 'http://localhost:8081/codex-instances'
+sleep 1
+curl -D- "-H$H1" -H$H2 -H$H3 'http://localhost:8081/codex-instances/1234'
+curl -D- "-H$H1" -H$H2 -H$H3 'http://localhost:8081/codex-instances/106ce3b4-433a-406c-b584-e5a6242258f1'
 
 kill -9 $PID

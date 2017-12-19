@@ -36,7 +36,7 @@ public class CodexInvImpl implements CodexInstancesResource {
         client.close();
         if (res.statusCode() == 200) {
           fut.handle(Future.succeededFuture(b));
-        } else if (res.statusCode() == 404 || res.statusCode() == 500) {
+        } else if (res.statusCode() == 404) {
           fut.handle(Future.succeededFuture(Buffer.buffer())); // empty buffer
         } else {
           fut.handle(Future.failedFuture("Get url " + url + " returned " + res.statusCode()));
@@ -246,6 +246,11 @@ public class CodexInvImpl implements CodexInstancesResource {
     Context vertxContext) throws Exception {
 
     logger.info("GetCodexInstancesById");
+    if (!id.matches("^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$")) {
+      handler.handle(Future.succeededFuture(
+        CodexInstancesResource.GetCodexInstancesByIdResponse.withPlainNotFound(id)));
+      return;
+    }
     LHeaders lHeaders = new LHeaders(okapiHeaders);
     getMaps(vertxContext, lHeaders, res1 -> {
       if (res1.failed()) {
