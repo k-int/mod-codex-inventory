@@ -57,7 +57,7 @@ public class CodexInvImpl implements CodexInstancesResource {
     req.end();
   }
 
-  static Map<String, String> contributorTypeMap = new LinkedHashMap<>();
+  static Map<String, String> contributorNameTypeIdMap = new LinkedHashMap<>();
   static Map<String, String> instanceTypeMap = new LinkedHashMap<>();
   static Map<String, String> instanceFormatMap = new LinkedHashMap<>();
   static Map<String, String> identifierTypeMap = new LinkedHashMap<>();
@@ -106,8 +106,8 @@ public class CodexInvImpl implements CodexInstancesResource {
   }
 
   private void getMaps(Context context, LHeaders headers, Handler<AsyncResult<Void>> fut) {
-    if (contributorTypeMap.isEmpty()) {
-      getMap(context, headers, contributorTypeMap, "/contributor-types", "contributorTypes",
+    if (contributorNameTypeIdMap.isEmpty()) {
+      getMap(context, headers, contributorNameTypeIdMap, "/contributor-name-types", "contributorNameTypes",
         res -> {
           if (res.succeeded()) {
             getMaps(context, headers, fut);
@@ -173,7 +173,7 @@ public class CodexInvImpl implements CodexInstancesResource {
         logger.info("getByQuery succeeded. Analyzing results");
         try {
           InstanceConvert.invToCollection(new JsonObject(b.toString()), col,
-            contributorTypeMap, instanceTypeMap,
+            contributorNameTypeIdMap, instanceTypeMap,
             instanceFormatMap, identifierTypeMap);
         } catch (Exception e) {
           logger.warn(e);
@@ -200,7 +200,7 @@ public class CodexInvImpl implements CodexInstancesResource {
           if (res.result().length() > 0) {
             JsonObject j = new JsonObject(res.result().toString());
             InstanceConvert.invToCodex(j, instance,
-              contributorTypeMap, instanceTypeMap,
+              contributorNameTypeIdMap, instanceTypeMap,
               instanceFormatMap, identifierTypeMap);
           }
         } catch (Exception e) {

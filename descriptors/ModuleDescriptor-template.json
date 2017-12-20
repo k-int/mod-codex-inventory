@@ -4,10 +4,10 @@
   "requires": [
     {
       "id": "instance-storage",
-      "version": "3.0"
+      "version": "4.0"
     },
     {
-      "id": "contributor-types",
+      "id": "contributor-name-types",
       "version": "1.0"
     },
     {

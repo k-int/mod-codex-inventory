@@ -18,7 +18,7 @@ public class InstanceConvert {
     throw new IllegalStateException("Instance");
   }
   public static void invToCollection(JsonObject j, InstanceCollection col,
-    Map<String, String> contributorTypeMap,
+    Map<String, String> contributorNameTypeIdMap,
     Map<String, String> instanceTypeMap,
     Map<String, String> instanceFormatMap,
     Map<String, String> identifierTypeMap) {
@@ -30,7 +30,7 @@ public class InstanceConvert {
     List<Instance> l = new LinkedList<>();
     for (int i = 0; i < a.size(); i++) {
       Instance instance = new Instance();
-      invToCodex(a.getJsonObject(i), instance, contributorTypeMap,
+      invToCodex(a.getJsonObject(i), instance, contributorNameTypeIdMap,
         instanceTypeMap, instanceFormatMap, identifierTypeMap);
       l.add(instance);
     }
@@ -43,7 +43,7 @@ public class InstanceConvert {
   }
 
   public static void invToCodex(JsonObject j, Instance instance,
-    Map<String, String> contributorTypeMap,
+    Map<String, String> contributorNameTypeIdMap,
     Map<String, String> instanceTypeMap,
     Map<String, String> instanceFormatMap,
     Map<String, String> identifierTypeMap) {
@@ -83,7 +83,7 @@ public class InstanceConvert {
         Set<Contributor> cl = new HashSet<>();
         for (int i = 0; i < ar.size(); i++) {
           JsonObject ji = ar.getJsonObject(i);
-          final String type = contributorTypeMap.get(ji.getString("contributorTypeId"));
+          final String type = contributorNameTypeIdMap.get(ji.getString("contributorNameTypeId"));
           if (type != null) {
             Contributor c = new Contributor();
             c.setName(ji.getString("name"));
